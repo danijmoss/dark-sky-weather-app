@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Local Weather App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css'>
+<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  --
+<div class="container">
+  <!-- Month and Year -->
+  <div class="row">
+    <div class="col-md-6">
+      
+    </div>
+    <div class="col-md-6">
+<!--       <h1 id="weekSummary" class="text-left"></h1> -->
+      <p id="monthNum"></p>
+      <p id="year"></p>
+    </div>
+  </div>
+  <!-- END Month and Year -->
+
+  <!-- Weather Forecast -->
+  <div id="weather">
+    <div class="row">
+      
+      <!-- Today -->
+      <div id="today" class="col-md-2">
+        <div class="thumbnail current-thumbnail">
+          <div class="row">
+            <div class="col-sm-12">
+              <p class="time text-center"></p>
+              <p class="location text-center"></p>
+              <button id="convertTemp" class="btn btn-default btn-block" role="button">Convert F&deg; / C&deg;</button>
+            </div>
+          </div>
+          <p class="text-uppercase text-center">
+            <span class="day"></span>
+              <br/>
+            <span class="date"></span>
+          </p>
+           <p class="icon"></p>
+           <p class="temp"></p>
+        </div>
+      </div>
+      <!-- END Today -->
+      
+      <!-- Weekday 01-->
+      <div class="col-md-2">
+        <div class="thumbnail">
+<!--
+           <p class="text-uppercase text-center"><span class="day"></span><br/><span class="date"></span></p>
+           <p class="icon"></p>
+-->
+           <p class="temp"></p>
+        </div>
+      </div>
+      <!-- END Weekday 01-->
+      
+      <!-- Weekday 02-->
+      <div class="col-md-2">
+        <div class="thumbnail">
+<!--
+           <p class="text-uppercase text-center"><span class="day"></span><br/><span class="date"></span></p>
+          <p class="icon icon-upcoming text-center"></p>
+-->
+           <p class="temp"></p>
+        </div>
+      </div>
+      <!-- END Weekday 02-->
+      
+      <!-- Weekday 03 -->
+      <div class="col-md-2">
+        <div class="thumbnail">
+<!--
+           <p class="text-uppercase text-center"><span class="day"></span><br/><span class="date"></span></p>
+          <p class="icon icon-upcoming text-center"></p>
+-->
+           <p class="temp"></p>
+        </div>
+      </div>
+      <!-- END Weekday 03 -->
+      
+      <!-- Weekday 04-->
+      <div class="col-md-2">
+        <div class="thumbnail">
+<!--
+           <p class="text-uppercase text-center"><span class="day"></span><br/><span class="date"></span></p>
+          <p class="icon icon-upcoming text-center"></p>
+-->
+           <p class="temp"></p>
+        </div>
+      </div>
+      <!-- END Weekday 04-->
+      
+      <!-- Weekday 05-->
+      <div class="col-md-2">
+        <div class="thumbnail">
+<!--
+          <p class="text-uppercase text-center"><span class="day"></span><br/><span class="date"></span></p>
+          <p class="icon icon-upcoming text-center"></p>
+-->
+           <p class="temp"></p>
+        </div>
+      </div>
+      <!-- END Weekday 05-->
+      
+    </div>
+  </div>
+  <!-- END Weather Forecast -->
+</div>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
+<script src="js/index.js"></script>
+
+</body>
+</html>
