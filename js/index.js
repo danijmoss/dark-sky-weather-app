@@ -26,19 +26,68 @@ if (navigator.geolocation) {
     $.getJSON(fullURL, function(json) {
       //console.log(json);
         
-      //Display weather information
+     //----Display weather information------------//
+        
+     //Set up the loop to go through the daily array    
      for (i = 0; i < json.daily.data.length; i++) {
          
-        var temp = json.daily.data[i].apparentTemperatureMax;
+        //Retrieve temp data and display on page 
+        var temp = Math.round(json.daily.data[i].apparentTemperatureMax); 
+        //console.log(Ctemp);  
+        $('.temp' + i).html(temp + "&deg;F"); 
         //console.log(temp);
-        $('.temp'+ i).html(temp);
-     } 
+         
+         tempChange = 0;
+         
+         $('#convertTemp').click(function() {
+             for (i = 0; i < json.daily.data.length; i++) {
+                
+                 if (tempChange === 0) {
+                    //Retrieve temp data and display on page 
+                    var temp = Math.round(json.daily.data[i].apparentTemperatureMax); 
+                    var Ctemp = Math.round((temp - 32) / 1.8);
+                    //console.log(Ctemp);
+                    $('.temp' + i).html(Ctemp + "&deg;C");    
+
+                    tempChange = 1; 
+                 }
+                 else { 
+
+                     $('.temp' + i).html(Ftemp + "&deg;F");    
+                     
+                 }
+                 tempChange = 0;
+                
+             }
+         });
+         
+        //Retrieve icon data and display on page  
+        var icon = json.daily.data[i].icon;
+        $('.icon' + i).html("<i class='wi wi-forecast-io-" + icon + "'></i>");
         
+        //Retrieve summary data and display on page  
+        var desc = json.daily.data[i].summary;
+        $('.desc' + i).html(desc); 
+         
+        //Set up day name and display on page  
+        var dayName = moment().add(i, "day").format("ddd");
+        $('.day' + i).html(dayName);
+         
+        //Set up day date and display on page  
+        var dayNum = moment().add(i, "day").format("D");
+        $('.date' + i).html(dayNum);
+            
+     }   
 
     });
               
               
-    //-------------------------------------//   
+    //-------------------------------------//  
+      
+      
+      
+      
+    //-------------------------------------//  
       
       
     //Variables to get user's location using Google Maps API 
